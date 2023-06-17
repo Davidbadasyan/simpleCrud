@@ -1,0 +1,9 @@
+﻿namespace simpleCrud.Infrastructure.DbContexts;
+
+public abstract class ReadableDbContext : Microsoft.EntityFrameworkCore.DbContext
+{
+    protected ReadableDbContext(DbContextOptions options) : base(options)
+    {
+        ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
+    }
+}
